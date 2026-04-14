@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <div>
+        <h1>Calculadora</h1>
+        <input type="text" id ="display" disabled>
+        <br>
+        <input type="button" value="1" onclick="appendNumber('1')">
+        <input type="button" value="2" onclick="appendNumber('2')">
+        <input type="button" value="3" onclick="appendNumber('3')">
+        <input type="button" value="+" onclick="appendOperator('+')">
+        <br>
+        <input type="button" value="4" onclick="appendNumber('4')">
+        <input type="button" value="5" onclick="appendNumber('5')">
+        <input type="button" value="6" onclick="appendNumber('6')">
+        <input type="button" value="-" onclick="appendOperator('-')">
+        <br>
+        <input type="button" value="7" onclick="appendNumber('7')">
+        <input type="button" value="8" onclick="appendNumber('8')">
+        <input type="button" value="9" onclick="appendNumber('9')">
+        <input type="button" value="*" onclick="appendOperator('*')">   
+        <br>
+        <input type="button" value="C" onclick="cleanWindow()">
+        <input type="button" value="0" onclick="appendNumber('0')">
+        <input type="button" value="=" onclick="calculate()">
+        <input type="button" value="/" onclick="appendOperator('/')">
+    </div>
+    <script src="./app.js"></script>
+
+</body>
+</html>

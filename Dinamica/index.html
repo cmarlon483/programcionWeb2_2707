@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Filas Dinámico</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding: 50px; background-color: #f4f4f9; }
+        .container { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 300px; }
+        input { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        ul { margin-top: 20px; padding-left: 20px; color: #333; }
+        li { margin-bottom: 5px; padding: 5px; border-bottom: 1px inset #eee; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h3>Generador de Filas</h3>
+        
+        <input type="number" id="numeroFilas" placeholder="Escribe un número..." min="1">
+        
+        <button id="btnGenerar">Generar Lista</button>
+
+        <ul id="listaDinamica"></ul>
+    </div>
+
+    <script>
+        const inputNumero = document.querySelector('#numeroFilas');
+        const botonGenerar = document.querySelector('#btnGenerar');
+        const lista = document.querySelector('#listaDinamica');
+
+        botonGenerar.addEventListener('click', () => {
+            const cantidad = parseInt(inputNumero.value);
+
+            if (isNaN(cantidad) || cantidad <= 0) {
+                return alert('Por favor, ingresa un número válido mayor a 0');
+            }
+
+            // Usando la técnica moderna de mapeo
+            const filasHTML = Array.from({ length: cantidad }, (_, i) => {
+                return `<li>Fila generada número ${i + 1}</li>`;
+            }).join('');
+
+            lista.innerHTML = filasHTML;
+        });
+    </script>
+</body>
+<script src="./app.js"></script>
+</html>
